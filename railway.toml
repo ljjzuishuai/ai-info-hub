@@ -1,9 +1,7 @@
 [build]
-builder = "nixpacks"
-buildCommand = "cd client && npm install && npm run build && cd ../server && npm install && npm run build"
+builder = "docker"
 
 [deploy]
-startCommand = "cd server && node dist/index.js"
 healthcheckPath = "/api/v1/models"
 
 [service]
