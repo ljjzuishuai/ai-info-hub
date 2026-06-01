@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: ai-info-hub-api
+    env: node
+    buildCommand: cd server && npm install && npm run build
+    startCommand: cd server && node dist/index.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        value: ai-info-hub-prod-change-this-to-random-string
+      - key: CLIENT_ORIGIN
+        value: https://ai-info-hub.vercel.app

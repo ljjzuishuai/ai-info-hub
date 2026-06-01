@@ -16,7 +16,7 @@ const BENCH_COLORS: Record<string, string> = {
 
 export default function ModelDetailPage() {
   const { id } = useParams<{ id: string }>()
-  const { isAuthenticated, user } = useAuthStore()
+  const isAuthenticated = useAuthStore(s => s.isAuthenticated)
   const qc = useQueryClient()
 
   // 评价表单

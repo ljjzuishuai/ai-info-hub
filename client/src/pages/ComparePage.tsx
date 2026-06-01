@@ -3,7 +3,7 @@ import { useSearchParams, Link } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
 import { modelsApi } from '../api/models'
 import api from '../api/client'
-import type { AIModel, BenchmarkScore } from '../types'
+import type { BenchmarkScore } from '../types'
 
 const P_LABEL: Record<string, string> = { free: '免费 🟢', freemium: '部分免费 🔵', paid: '付费 🟣' }
 

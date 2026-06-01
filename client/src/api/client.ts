@@ -1,6 +1,8 @@
 import axios from 'axios';
 
-const api = axios.create({ baseURL: '/api/v1', headers: { 'Content-Type': 'application/json' } });
+// 开发环境用本地代理，生产环境用 Render 后端地址
+const baseURL = import.meta.env.VITE_API_URL || '/api/v1';
+const api = axios.create({ baseURL, headers: { 'Content-Type': 'application/json' } });
 
 api.interceptors.request.use(config => {
   const token = localStorage.getItem('token');
