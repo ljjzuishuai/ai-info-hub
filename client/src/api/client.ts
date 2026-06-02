@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-// 开发环境用本地代理，生产环境用 Render 后端地址
-const baseURL = import.meta.env.VITE_API_URL || '/api/v1';
+// API 地址直接写死，不再依赖环境变量
+const baseURL = import.meta.env.DEV ? '/api/v1' : 'https://ai-info-hub-3.onrender.com/api/v1';
 const api = axios.create({ baseURL, headers: { 'Content-Type': 'application/json' } });
 
 api.interceptors.request.use(config => {
